@@ -180,13 +180,13 @@ if uploaded_file is not None:
                             [right_knee_lm.x, right_knee_lm.y]
                         )
 
-                        # Draw lines for the right angle (Green)
-                        cv2.line(image_bgr, right_foot_index_px, right_ankle_px, (0, 255, 0), 2) # Green
-                        cv2.line(image_bgr, right_ankle_px, right_knee_px, (0, 255, 0), 2) # Green
+                        # Draw lines for the right angle (Red)
+                        cv2.line(image_bgr, right_foot_index_px, right_ankle_px, (0, 0, 255), 2) # Red (BGR)
+                        cv2.line(image_bgr, right_ankle_px, right_knee_px, (0, 0, 255), 2) # Red (BGR)
                         # Draw circles at joints
-                        cv2.circle(image_bgr, right_foot_index_px, 3, (0, 255, 0), -1)
-                        cv2.circle(image_bgr, right_ankle_px, 5, (0, 255, 0), -1) # Ankle joint larger
-                        cv2.circle(image_bgr, right_knee_px, 3, (0, 255, 0), -1)
+                        cv2.circle(image_bgr, right_foot_index_px, 3, (0, 0, 255), -1) # Red (BGR)
+                        cv2.circle(image_bgr, right_ankle_px, 5, (0, 0, 255), -1) # Ankle joint larger - Red (BGR)
+                        cv2.circle(image_bgr, right_knee_px, 3, (0, 0, 255), -1) # Red (BGR)
 
                         # Visualize right angle value (white text)
                         cv2.putText(image_bgr, f"R: {int(current_right_angle)}",
