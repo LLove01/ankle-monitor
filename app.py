@@ -54,7 +54,7 @@ def calculate_angle(a, b, c):
     return angle_degrees
 
 
-st.title("Ankle Angle Detection (Foot Index - Ankle - Knee)")
+st.title("Ankle Angle Detection in Video")
 
 uploaded_file = st.file_uploader("Upload a video file", type=["mp4", "mov", "avi", "mkv"])
 
@@ -272,7 +272,7 @@ if uploaded_file is not None:
                 current_frame_index = st.session_state.frame_index
                 current_frame_image = st.session_state.processed_frames[current_frame_index]
                 # Convert BGR (OpenCV) to RGB (Streamlit)
-                st.image(cv2.cvtColor(current_frame_image, cv2.COLOR_BGR2RGB), caption=f"Frame {current_frame_index + 1}/{st.session_state.total_processed_frames}", use_column_width=True)
+                st.image(cv2.cvtColor(current_frame_image, cv2.COLOR_BGR2RGB), caption=f"Frame {current_frame_index + 1}/{st.session_state.total_processed_frames}", use_container_width=True)
 
                 # Display frame information (retrieve from list using current_frame_index)
                 current_time = st.session_state.timestamps[current_frame_index]
